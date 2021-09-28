@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Card } from 'src/app/Card';
-import { CARDS } from 'src/app/mock-cards';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CardService {
-  constructor() {}
+  private apiUrl = 'http://localhost:5000/cards';
+
+  constructor(private http: HttpClient) {}
 
   getCards(): Observable<Card[]> {
-    const cards = of(CARDS);
-    return cards;
+    return this.http.get<Card[]>(this.apiUrl);
   }
 }
