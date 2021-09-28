@@ -1,0 +1,8 @@
+<div class="card">
+  <h3>{{ card.name }}</h3>
+  <p>{{ card.owner }}</p>
+  <p *ngIf="card.price > 0">{{ card.price }}</p>
+  <div *ngIf="forSale()">
+    <app-button text="Buy"></app-button>
+  </div>
+</div>
