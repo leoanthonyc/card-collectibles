@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <label for="name">Card</label>
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="name"
+      id="name"
+      placeholder="Name"
+    />
+  </div>
+  <div class="form-control">
+    <label for="owner">Owner</label>
+    <input
+      type="text"
+      name="owner"
+      [(ngModel)]="owner"
+      id="owner"
+      placeholder="Owner"
+    />
+  </div>
+  <div class="form-control">
+    <label for="price">Price</label>
+    <input
+      type="number"
+      name="price"
+      [(ngModel)]="price"
+      id="price"
+      placeholder="Price"
+    />
+  </div>
+  <input type="submit" value="Save" />
+</form>

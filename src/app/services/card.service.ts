@@ -24,4 +24,8 @@ export class CardService {
     const url = `${this.apiUrl}/${card.id}`;
     return this.http.put<Card>(url, card, httpOptions);
   }
+
+  addCard(card: Card): Observable<Card> {
+    return this.http.post<Card>(this.apiUrl, card, httpOptions);
+  }
 }

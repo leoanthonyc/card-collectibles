@@ -13,12 +13,20 @@ export class CardsComponent implements OnInit {
   constructor(private cardService: CardService) {}
 
   ngOnInit(): void {
-    this.cardService.getCards().subscribe((cards) => (this.cards = cards));
+    this.cardService
+      .getCards()
+      .subscribe((cards) => (this.cards = cards.reverse()));
   }
 
   buyCard(card: Card) {
     card.price = 0;
     this.cardService.updateCard(card).subscribe();
+  }
+
+  addCard(card: Card) {
+    this.cardService
+      .addCard(card)
+      .subscribe((card: Card) => (this.cards = [card, ...this.cards]));
   }
 }
 ``;
