@@ -3,6 +3,6 @@
   <p>{{ card.owner }}</p>
   <p *ngIf="card.price > 0">{{ card.price }}</p>
   <div *ngIf="forSale()">
-    <app-button text="Buy"></app-button>
+    <app-button text="Buy" (click)="onBuy(card)"></app-button>
   </div>
 </div>

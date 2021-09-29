@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { CardService } from 'src/app/services/card.service';
 import { Card } from 'src/app/Card';
 
@@ -15,4 +15,10 @@ export class CardsComponent implements OnInit {
   ngOnInit(): void {
     this.cardService.getCards().subscribe((cards) => (this.cards = cards));
   }
+
+  buyCard(card: Card) {
+    card.price = 0;
+    this.cardService.updateCard(card).subscribe();
+  }
 }
+``;

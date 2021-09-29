@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Card } from 'src/app/Card';
 
 @Component({
@@ -8,6 +8,7 @@ import { Card } from 'src/app/Card';
 })
 export class CardItemComponent implements OnInit {
   @Input() card!: Card;
+  @Output() onBuyCard: EventEmitter<Card> = new EventEmitter();
 
   constructor() {}
 
@@ -15,5 +16,9 @@ export class CardItemComponent implements OnInit {
 
   forSale(): boolean {
     return this.card.price > 0;
+  }
+
+  onBuy(card: Card) {
+    this.onBuyCard.emit(card);
   }
 }
