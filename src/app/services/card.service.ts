@@ -20,6 +20,11 @@ export class CardService {
     return this.http.get<Card[]>(this.apiUrl);
   }
 
+  getCard(id: Number): Observable<Card> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Card>(url);
+  }
+
   updateCard(card: Card): Observable<Card> {
     const url = `${this.apiUrl}/${card.id}`;
     return this.http.put<Card>(url, card, httpOptions);

@@ -22,11 +22,4 @@ export class CardsComponent implements OnInit {
     card.price = 0;
     this.cardService.updateCard(card).subscribe();
   }
-
-  addCard(card: Card) {
-    this.cardService
-      .addCard(card)
-      .subscribe((card: Card) => (this.cards = [card, ...this.cards]));
-  }
 }
-``;

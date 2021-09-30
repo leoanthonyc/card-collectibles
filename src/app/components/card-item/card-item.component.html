@@ -1,5 +1,7 @@
 <div class="card">
-  <h3>{{ card.name }}</h3>
+  <h3>
+    <a [routerLink]="['card', card.id]">{{ card.name }}</a>
+  </h3>
   <p>{{ card.owner }}</p>
   <p *ngIf="card.price > 0">{{ card.price }}</p>
   <div *ngIf="forSale()">

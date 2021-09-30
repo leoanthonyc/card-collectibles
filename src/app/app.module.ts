@@ -9,7 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ButtonComponent } from './components/button/button.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
-import { AddCardComponent } from './components/add-card/add-card.component';
+import { CardFormComponent } from './components/card-form/card-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { AddCardComponent } from './components/add-card/add-card.component';
     ButtonComponent,
     CardsComponent,
     CardItemComponent,
-    AddCardComponent,
+    CardFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
