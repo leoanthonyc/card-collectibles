@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   title: string = 'Card Collectibles';
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor(public router: Router) {}
+
+  ngOnInit(): void {
+    console.log(this.router.url);
+  }
 
   toggleAll() {
     console.log('all');

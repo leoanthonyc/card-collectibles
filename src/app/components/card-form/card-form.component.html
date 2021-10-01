@@ -1,39 +1,42 @@
-<form (ngSubmit)="onSubmit()">
-  <div class="form-control">
-    <label for="name">Card</label>
+<form (ngSubmit)="onSubmit()" class="form">
+  <div class="card-image"></div>
+  <div>
+    <div class="form-control">
+      <label for="name">Card</label>
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="card.name"
+        id="name"
+        placeholder="Name"
+        value="{{ this.card.name }}"
+      />
+    </div>
+    <div class="form-control">
+      <label for="owner">Owner</label>
+      <input
+        type="text"
+        name="owner"
+        [(ngModel)]="card.owner"
+        id="owner"
+        placeholder="Owner"
+        value="{{ this.card.owner }}"
+      />
+    </div>
+    <div class="form-control">
+      <label for="price">Price</label>
+      <input
+        type="number"
+        name="price"
+        [(ngModel)]="card.price"
+        id="price"
+        placeholder="Price"
+        value="{{ this.card.price }}"
+      />
+    </div>
     <input
-      type="text"
-      name="name"
-      [(ngModel)]="card.name"
-      id="name"
-      placeholder="Name"
-      value="{{ this.card.name }}"
+      type="submit"
+      value="{{ this.card.id ? 'Update Collectible' : 'Create Collectible' }}"
     />
   </div>
-  <div class="form-control">
-    <label for="owner">Owner</label>
-    <input
-      type="text"
-      name="owner"
-      [(ngModel)]="card.owner"
-      id="owner"
-      placeholder="Owner"
-      value="{{ this.card.owner }}"
-    />
-  </div>
-  <div class="form-control">
-    <label for="price">Price</label>
-    <input
-      type="number"
-      name="price"
-      [(ngModel)]="card.price"
-      id="price"
-      placeholder="Price"
-      value="{{ this.card.price }}"
-    />
-  </div>
-  <input
-    type="submit"
-    value="{{ this.card.id ? 'Update Collectible' : 'Create Collectible' }}"
-  />
 </form>

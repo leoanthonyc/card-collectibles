@@ -1,0 +1,17 @@
+.selected {
+  color: red;
+}
+
+.cards {
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  flex-wrap: wrap;
+  flex-basis: 33.333333%;
+}
+
+.filters {
+  margin-top: 5px;
+  display: flex;
+  gap: 10px;
+}

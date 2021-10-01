@@ -1,5 +1,16 @@
-<app-card-item
-  *ngFor="let card of cards"
-  [card]="card"
-  (onBuyCard)="buyCard(card)"
-></app-card-item>
+<div class="filters">
+  <a routerLink="/sale" [ngClass]="{ selected: router.url.includes('sale') }"
+    >For Sale</a
+  >
+  |
+  <a routerLink="/sold" [ngClass]="{ selected: router.url.includes('sold') }"
+    >Sold</a
+  >
+</div>
+<div class="cards">
+  <app-card-item
+    *ngFor="let card of cards"
+    [card]="card"
+    (onBuyCard)="buyCard(card)"
+  ></app-card-item>
+</div>

@@ -1,5 +1,11 @@
 <header>
   <h1>{{ title }}</h1>
-  <a routerLink="/">All Collectibles</a>
-  <a routerLink="/card">Create</a>
+  <div class="links">
+    <a routerLink="/" [ngClass]="{ selected: router.url == '/' }"
+      >All Collectibles</a
+    >
+    <a routerLink="/card" [ngClass]="{ selected: router.url == '/card' }"
+      >Create</a
+    >
+  </div>
 </header>
